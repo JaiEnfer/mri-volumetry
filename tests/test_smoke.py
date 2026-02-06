@@ -5,7 +5,6 @@ from pathlib import Path
 
 import nibabel as nib
 import numpy as np
-
 from mri_volumetry.pipeline import run_pipeline
 
 
@@ -29,4 +28,3 @@ def test_pipeline_creates_metrics(tmp_path: Path) -> None:
     metrics = json.loads(metrics_path.read_text(encoding="utf-8"))
     assert "brain_ml" in metrics
     assert metrics["brain_ml"] > 0
-
